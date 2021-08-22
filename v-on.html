@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .on-ex{
+    width: 400px;
+    height: 500px;
+    background-color: gainsboro;
+  }
+  .box{
+    width: 150px;
+    height: 50px;
+    background-color: gold;
+    margin-top: 20px;
+  }
+  .specialBg{
+    background-color: greenyellow;
+  }
+</style>
+<body>
+  <div class="on-ex">
+    <div class="box" :class="clickData ? classClickData : ''" v-on:click="onClickHandle">On Click</div>
+    <div class="box" :class="classHoverData" @mouseover="onHoverHandle" @mouseleave="onLeaveHandle">On Hover</div>
+    <div class="box" :class="doubleClick ? classClickData : ''" v-on:dblclick="onDoubleClickHandle">On Double Click</div>
+    <div class="box" @mouseleave="onMouseLeaveHandle">On Leave {{dataLeave}}</div>
+  </div>
+</body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="./js/v-on.js"></script>
+</html>

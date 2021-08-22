@@ -17,12 +17,14 @@
       <input type="text" v-model="fun" />
       <button :class="[fun ? activeClass : '']">Hello man</button>
     </div>
+  
     <!-- V-FOR -->
     <div class="for-ex">
       <ul v-for="num in 5" :key="num">
         <li>{{num}}</li>
       </ul>
     </div>
+
     <!-- V-FOR WITH VALUE, KEY, INDEX -->
     <div class="for-ex2">
       <p v-for="(value, key, index) in funs" :key="value">
