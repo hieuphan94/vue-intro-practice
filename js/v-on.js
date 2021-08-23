@@ -6,7 +6,9 @@ const OnEx = {
       classClickData: "specialBg",
       classHoverData: "",
       doubleClick: false,
-      dataLeave: '' 
+      dataLeave: '',
+      x: '',
+      y: '' 
     }
   },
   methods: {
@@ -24,6 +26,10 @@ const OnEx = {
     },
     onMouseLeaveHandle(){
       this.dataLeave = "adasd"
+    },
+    mouseMoveHandle(event){
+      this.x = event.offsetX;
+      this.y = event.offsetY;
     }
   },
 }

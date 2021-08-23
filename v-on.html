@@ -28,6 +28,7 @@
     <div class="box" :class="classHoverData" @mouseover="onHoverHandle" @mouseleave="onLeaveHandle">On Hover</div>
     <div class="box" :class="doubleClick ? classClickData : ''" v-on:dblclick="onDoubleClickHandle">On Double Click</div>
     <div class="box" @mouseleave="onMouseLeaveHandle">On Leave {{dataLeave}}</div>
+    <div class="box" @mousemove="mouseMoveHandle">Mouse Move `{{x}}:{{y}}`</div>
   </div>
 </body>
 <script src="https://unpkg.com/vue@next"></script>

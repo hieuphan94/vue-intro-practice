@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-filter">
+        <div class="filter">
+          <input type="checkbox" id="" value="150" v-model="checkPriceFilter" />
+          <label for="150">Price >= 150</label>
+          <span>|</span>
+          <input type="checkbox" id="" value="100" v-model="checkPriceFilter" />
+          <label for="100">Price >= 100</label>
+          <span>|</span>
+          <input type="checkbox" id="" value="50" v-model="checkPriceFilter" />
+          <label for="50">Price >= 50</label>
+        </div>
+        <div class="filer-search-input">
+          <input type="text" v-model="keyword" >
+          <label for="">Search By Name</label>
+        </div>
+      </div>
+      <hr />
+      <div class="products">
+        <div
+          class="product"
+          v-for="product in filterProducts"
+          :class="product.isCart? cartClass: ''"
+        >
+          <img v-bind:src="product.pro_img" alt="" />
+          <div class="product-content">
+            <div class="product-top">
+              <h3>{{product.pro_name}}</h3>
+              <div class="product-shop-ava">
+                <img v-bind:src="product.pro_shop" alt="" />
+                <h3>Shop 1</h3>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <button
+                class="btn add-cart"
+                v-on:click="addToCartHandle($event, product)"
+              >
+                Add To Cart
+              </button>
+              <button class="btn pro-detail">Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="./js/product-list-filter.js"></script>
+</html>
